@@ -1,0 +1,183 @@
+/*
+Actividad 1: Creación de un Blog
+Fundación Universitaria Internacional de la Rioja
+Desarrollo de Aplicaciones en Red
+Felipe Jimenez Melguizo
+2026.10.30
+*/
+
+/* VARIABLES Y FUENTES GLOBALES DEL DISEÑO */
+/* --------------------------------------- */
+:root {
+  --color-principal: #1e3a8a;
+  --color-secundario: #2563eb;
+  --color-fondo: #f8fafc;
+  --color-tarjeta: #ffffff;
+  --color-texto: #334155;
+  --color-borde: #e2e8f0;
+  --fuente-principal: system-ui, -apple-system, sans-serif;
+}
+
+/* Reorganizar caja */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ENCABEZADO Y BARRA DE NAVEGACIÓN */
+/* -------------------------------- */
+header {
+  background-color: var(--color-principal);
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+nav a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* ESTRUCTURA DE LA PORTADA Y LAS TARJETAS */
+/* --------------------------------------- */
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1; /*Footer hacia el fondo */
+}
+
+main h2 {
+  margin-bottom: 1.5rem;
+  color: var(--color-principal);
+}
+
+/* Cuadrícula de las tarjetas */
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta {
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Control de la resolución de las imágenes */
+.tarjeta img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.tarjeta h3 {
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.tarjeta a {
+  display: inline-block;
+  color: var(--color-secundario);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* VISTA DEL ARTÍCULO Y PIE DE PÁGINA */
+/* ---------------------------------- */
+.articulo-completo {
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.articulo-completo h2 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.articulo-completo .meta {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.articulo-completo img {
+  max-width: 100%;
+  max-height: 400px;
+  display: block;
+  margin: 1rem auto 1.5rem auto;
+  border-radius: 6px;
+}
+
+.articulo-completo p {
+  margin-bottom: 1.25rem;
+}
+
+.boton-volver {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-secundario);
+  color: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.boton-volver:hover {
+  opacity: 0.9;
+}
+
+footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
